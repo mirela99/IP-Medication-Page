@@ -1,0 +1,84 @@
+<mat-toolbar color="primary" >
+  <h2 class="header" color="primary" align="center">ALEGERE FILTRE </h2>
+</mat-toolbar>
+<mat-card>
+  <mat-card-content>
+    <h2 class="example-h2">Selectati din optiunile de mai jos sau introduceti manual filtrarea </h2>
+
+    <section class="example-section">
+      <label class="example-margin">Categorie Medicament:</label>
+      <mat-radio-group [(ngModel)]="categorie">
+        <mat-radio-button class="example-margin" value="sirop">Sirop</mat-radio-button>
+        <mat-radio-button class="example-margin" value="pastila">Pastila</mat-radio-button>
+        <mat-radio-button class="example-margin" value="injectie">Injectie</mat-radio-button>
+        <mat-radio-button class="example-margin" value="unguent">Unguent</mat-radio-button>
+        <mat-radio-button class="example-margin" value="picaturi">Picaturi</mat-radio-button>
+        <mat-radio-button class="md-form active" value="Alta optiune">
+          <input class="form-control" type="search" id="search" mdbInput>
+          <label for="search">  Alta Optiune  </label>
+        </mat-radio-button>
+      </mat-radio-group>
+    </section>
+
+    <section class="example-section">
+      <label class="example-margin">Dupa tipul medicamentelor :</label>
+      <mat-radio-group [(ngModel)]="tip">
+      <mat-radio-button class="example-margin" value="Eliberate cu reteta">Eliberate cu reteta</mat-radio-button>
+      <mat-radio-button class="example-margin" value="Suplimente alimentare">Suplimente alimentare</mat-radio-button>
+      <mat-radio-button class="example-margin" value="Eliberate fara retata">Eliberate fara reteta</mat-radio-button>
+      </mat-radio-group>
+    </section>
+
+    <section class="example-section">
+      <label class="example-margin">Dupa Substanta Activa:</label>
+      <mat-radio-group [(ngModel)]="substanta">
+        <mat-radio-button class="example-margin" value="Paracetamol">Paracetamol</mat-radio-button>
+        <mat-radio-button class="example-margin" value="Codeina">Codeină</mat-radio-button>
+        <mat-radio-button class="example-margin" value="Butamirat">Butamirat</mat-radio-button>
+        <mat-radio-button class="example-margin" value="Oxeladină">Oxeladină</mat-radio-button>
+        <mat-radio-button class="md-form active" value="Alta optiune">
+          <input class="form-control" type="search" id="search1" mdbInput>
+          <label for="search1">  Alta Optiune  </label>
+        </mat-radio-button>
+      </mat-radio-group>
+    </section>
+
+    <section class="example-section">
+    <label class="example-margin">Dupa zona corpului:</label>
+      <mat-radio-group [(ngModel)]="zona">
+      <mat-form-field>
+        <mat-label>Zona Afectata</mat-label>
+        <mat-select>
+          <mat-option *ngFor="let food of foods" [value]="food.value">
+            {{food.viewValue}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      </mat-radio-group>
+    </section>
+
+    <section class="example-section">
+      <label class="example-margin">Dupa Popularitate:</label>
+      <mat-radio-group [(ngModel)]="popularitate">
+        <mat-radio-button class="example-margin" value="Cunoscute">Cele mai cunoscute</mat-radio-button>
+        <mat-radio-button class="example-margin" value="Necunoscute">Cele mai putin cunoscute</mat-radio-button>
+
+      </mat-radio-group>
+    </section>
+
+    <section class="example-section">
+      <label class="example-margin">Ordonare Alfabetica:</label>
+      <mat-radio-group [(ngModel)]="ordonare">
+        <mat-radio-button class="example-margin" value="A-Z">A-Z</mat-radio-button>
+        <mat-radio-button class="example-margin" value="Z-A">Z-A</mat-radio-button>
+      </mat-radio-group>
+    </section>
+
+    <section class= "buton-search">
+      <button mat-raised-button color="accent">Cauta Medicamente</button>
+    </section>
+  </mat-card-content>
+</mat-card>
+
+
+
